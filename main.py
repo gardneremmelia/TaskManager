@@ -39,8 +39,9 @@ def main():
                 manager.list_tasks(show_completed=show_completed)
 
             case "3":
-                category = input("Enter category to filter by (Work, Personal, School, etc.): ").strip()
+                user_input = input("Enter category to filter by (Work, Personal, School, etc.) or press Enter to view all: ").strip()
                 show_completed = input("Show completed tasks? (yes/no): ").strip().lower() == "yes"
+                category = user_input if user_input else None  # Only filter if user provided input
                 manager.list_tasks(category=category, show_completed=show_completed)
 
             case "4":
